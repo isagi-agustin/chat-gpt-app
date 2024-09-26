@@ -18,11 +18,14 @@ export async function getCompletion(
   //   messages: messageHistory,
   // });
 
+  const assistant = "assistant" as "assistant";
+  const gptRes = "3";
+
   const messages = [
     ...messageHistory,
     {
-      role: "assistant" as "assistant",
-      content: "3"
+      role: assistant,
+      content: gptRes
     },
   ];
 
