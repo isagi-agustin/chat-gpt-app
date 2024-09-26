@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Link from "next/link";
 import { SessionProvider } from "next-auth/react";
+
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/react"
 
 import { signIn, signOut, auth } from '@/auth';
 
@@ -71,6 +73,7 @@ export default async function RootLayout({
           </div>
 
           <SpeedInsights />
+          <Analytics />
         </body>
       </html>
     </SessionProvider>

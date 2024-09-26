@@ -4,7 +4,8 @@ import GitHubProvider from "next-auth/providers/github";
 const authOptions: NextAuthConfig = {
   callbacks: {
     async signIn({ profile }) {
-      return profile?.login === "KhuongDuy106";
+      // return profile?.login === "KhuongDuy106";
+      return true;
     },
   },
   providers: [
