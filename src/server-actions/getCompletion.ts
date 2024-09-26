@@ -17,15 +17,12 @@ export async function getCompletion(
   //   model: "gpt-3.5-turbo",
   //   messages: messageHistory,
   // });
-
-  const assistant = "assistant" as "assistant";
-  const gptRes = "3";
-
+  
   const messages = [
     ...messageHistory,
     {
-      role: assistant,
-      content: gptRes
+      role: "assistant" as const,
+      content: "3" as const
     },
   ];
 
