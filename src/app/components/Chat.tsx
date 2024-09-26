@@ -24,7 +24,7 @@ export default function Chat({
   const [message, setMessage] = useState("");
   const chatId = useRef<number | null>(id);
 
-  let router = useRouter();
+  const router = useRouter();
 
   const onClick = async () => {
     const completions = await getCompletion(chatId.current, [
