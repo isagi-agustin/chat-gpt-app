@@ -26,8 +26,8 @@ export async function getChat(
   if (!chats[0]) {
     return null;
   }
-  const { rows: messages } =
-    await sql`SELECT * FROM messages WHERE chat_id = ${chatId}`;
+  const { rows: messages } = await sql`SELECT * FROM messages WHERE chat_id = ${chatId}`;
+  
   return {
     ...chats[0],
     messages: messages.map((msg) => ({

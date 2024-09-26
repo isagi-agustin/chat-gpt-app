@@ -28,7 +28,7 @@ export async function getCompletion(
       content: "3" as const
     },
   ];
-  
+
   const session = await getServerSession();
   let chatId = id;
   if (!chatId) {

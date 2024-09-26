@@ -1,4 +1,5 @@
 "use client";
+
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import {
@@ -8,7 +9,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-import { useSession, signIn, signOut } from "next-auth/react";
+import { useSession, signOut } from "next-auth/react";
 
 function getFirstTwoCapitalLetters(str?: string | null) {
   const match = (str || "").match(/[A-Z]/g);
@@ -40,7 +41,7 @@ export default function UserButton({
             <DropdownMenuItem
               onClick={() => {
                 onSignOut();
-                signOut();
+                signOut({ callbackUrl: '/' });
               }}
             >
               Sign Out
@@ -51,7 +52,6 @@ export default function UserButton({
       {status === "unauthenticated" && (
         <Button onClick={() => {
           onSignIn();
-          signIn();
         }}>Sign in</Button>
       )}
     </div>
