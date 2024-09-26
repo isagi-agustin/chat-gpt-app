@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Link from "next/link";
 import { SessionProvider } from "next-auth/react";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 import { signIn, signOut, auth } from '@/auth';
 
@@ -68,6 +69,8 @@ export default async function RootLayout({
           <div className="flex flex-col md:flex-row">
             <div className="flex-grow">{children}</div>
           </div>
+
+          <SpeedInsights />
         </body>
       </html>
     </SessionProvider>
