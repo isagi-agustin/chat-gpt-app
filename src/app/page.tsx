@@ -15,7 +15,6 @@ export default async function Home() {
       {session?.user?.email && (
         <>
           <Suspense fallback={<div>Loading Previous Chats</div>}>
-            {/* @ts-expect-error Server Component */}
             <PreviousChats />
           </Suspense>
           <h4 className="mt-5 text-2xl font-bold">New Chat Session</h4>
