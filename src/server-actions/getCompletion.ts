@@ -25,7 +25,7 @@ export async function getCompletion(
     ...messageHistory,
     {
       role: "assistant" as const,
-      content: "3" as const
+      content: "When you request the homepage from a server, it sends back everything that isn't wrapped in Suspense first. It holds the connection open until all the Suspense boundaries are resolved. Then, it takes the output of the Suspense boundaries and streams it to the client. The client goes ahead and updates that content anywhere on the page based on its own schedule. This is why it's referred to as out- of - order streaming." as const
     },
   ];
 
