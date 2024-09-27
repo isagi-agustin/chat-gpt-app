@@ -12,6 +12,8 @@ import UserButton from "./components/UserButton";
 
 import "./globals.css";
 
+export const dynamic = "force-dynamic";
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -30,8 +32,10 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
   children,
+  chats
 }: Readonly<{
   children: React.ReactNode;
+  chats: React.ReactNode;
 }>) {
   const session = await auth();
   if (session?.user) {
@@ -69,6 +73,7 @@ export default async function RootLayout({
             </div>
           </header>
           <div className="flex flex-col md:flex-row">
+            {chats}
             <div className="flex-grow">{children}</div>
           </div>
 
